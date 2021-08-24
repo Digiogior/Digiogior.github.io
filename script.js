@@ -43,7 +43,7 @@
             "Taiwan Inception Program Registration<br><a href='https://www.nvidia.com/zh-tw/deep-learning-ai/taiwan-inception-program/register/' target='_blank'>Visit Website</a><br><img alt='Taiwan Inception Program Registration' src='image/inception-program-register-thumbnail.JPG'>",
             "Cooler Master Contest<br><a href='https://www.nvidia.com/content/apac/campaigns/coolermaster-contest/au/' target='_blank'>Visit Website</a><br><img alt='Cooler Master Contest' src='image/cooler-master-campaign-thumbnail.JPG'>",
             "GeForce Cup<br><a href='https://www.nvidia.com/en-my/geforce/events/geforce-cup/grand-finals/' target='_blank'>Visit Website</a><br><img alt='GeForce Cup' src='image/geforce-cup-pacific-final-thumbnail.jpg'>",
-            "Game Face Campaign<br><a href='https://www.nvidia.com/content/apac/game-face-campaign/ANZ/' target='_blank'>Visit Website</a><br><img alt='Game Face Campaign' src='image/gameface-campaign-thumbnail.jpg'>",
+            "Game Face Campaign<br><a href='https://www.nvidia.com/content/apac/game-face-campaign/ANZ/' target='_blank'>Visit Website</a><br><img alt='Game Face Campaign' src='image/gameface-campaign-thumbnail.JPG'>",
             "AI Conference Korea<br><a href='https://www.nvidia.com/ko-kr/ai-conference/' target='_blank'>Visit Website</a><br><img alt='AI Conference Korea' src='image/ai-conference-kr-19-thumbnail.jpg'>",
             "I am open to new opportunities<br>You could contact me at <a href='mailto:digiogior@gmail.com'>digiogior@gmail.com</a>",
             "Hope you have a GOOD day",
