@@ -1,0 +1,104 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
+
+:root {
+  --main-font: Helvetica, Arial, sans-serif;
+  --message-bg: #6772e5;
+  --link-color: #f6f9fc;
+  --link-hover: #0a2540;
+  --main-color: #c1c1c1;
+  --font-family: "Roboto", sans-serif;
+  --link-font-size: 0.85rem;
+  --background-color: #f6f9fc;
+}
+
+@media (min-width: 1200px) {
+  :root {
+    font-size: 1.8rem;
+  }
+}
+
+:root {
+  font-size: 1.4rem;
+}
+
+html {
+  box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+body {
+  background-color: var(--background-color);
+}
+
+.container {
+  width: 95vw;
+  margin: 0.8rem auto;
+}
+
+.container * + * {
+  margin: 0.25rem 0;
+}
+
+.bubble {
+  display: inline-block;
+  padding: 0.5rem 0.95rem;
+  background: var(--message-bg);
+  border-radius: 45px 45px 45px 0;
+  transition: border-radius 0.5s;
+  max-width: 100%;
+}
+
+.message {
+  opacity: 0;
+  color: white;
+  font-family: var(--font-family);
+  transition: opacity 0.8s;
+}
+
+.message a {
+  color: var(--link-color);
+  font-size: var(--link-font-size);
+}
+
+.message a:hover {
+  color: var(--link-hover);
+}
+
+.message img {
+  max-width: 450px;
+  width: 100%;
+  height: auto;
+  padding: 0.45rem 0;
+}
+
+.loading strong:nth-of-type(1) {
+  color: #9880ff;
+  animation: loadingPoint 1s infinite alternate;
+}
+
+.loading strong:nth-of-type(2) {
+  color: #ebe6ff;
+  animation: loadingPoint 1s infinite alternate;
+  animation-delay: 0.5s;
+}
+
+.loading strong:nth-of-type(3) {
+  color: #ebe6ff;
+  animation: loadingPoint 1s infinite alternate;
+  animation-delay: 1s;
+}
+
+@keyframes loadingPoint {
+  0% {
+    color: #9880ff;
+  }
+  50%,
+  100% {
+    color: #ebe6ff;
+  }
+}
