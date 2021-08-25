@@ -35,10 +35,6 @@ body {
   background-color: var(--background-color);
 }
 
-.nojs-show {
-  opacity: 1;
-}
-
 .container {
   width: 95vw;
   margin: 0.8rem auto;
@@ -105,4 +101,8 @@ body {
   100% {
     color: #ebe6ff;
   }
+}
+
+.nojs-show {
+  opacity: 1;
 }
