@@ -20,6 +20,7 @@
         sectionElem.appendChild(bubbleElem);
         containerElem.appendChild(sectionElem);
         const messageElem = document.createElement('span');
+        let imgElem = null;
         setTimeout(function() {
             bubbleElem.removeChild(loadingElem);
             messageElem.classList.add('message');
@@ -29,7 +30,12 @@
         setTimeout(function() {
             bubbleElem.style.borderRadius = '45px';
             messageElem.style.opacity = '1';
-            window.scrollTo(0,document.body.scrollHeight);
+            if (messageElem.children[3]) {
+                imgElem = messageElem.children[3];
+            }
+            if (!imgElem || imgElem.complete) {
+                window.scrollTo(0,document.body.scrollHeight);
+            }
         }, 1400);
     }
 
