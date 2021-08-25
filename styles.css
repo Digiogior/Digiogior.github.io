@@ -1,8 +1,8 @@
 @import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
 
 :root {
-  --main-font: Helvetica, Arial, sans-serif;
   --message-bg: #6772e5;
+  --color: #ffffff;
   --link-color: #f6f9fc;
   --link-hover: #0a2540;
   --main-color: #c1c1c1;
@@ -32,6 +32,7 @@ html {
 }
 
 body {
+  background-color: #f6f9fc;
   background-color: var(--background-color);
 }
 
@@ -47,6 +48,7 @@ body {
 .bubble {
   display: inline-block;
   padding: 0.5rem 0.95rem;
+  background: #6772e5;
   background: var(--message-bg);
   border-radius: 45px 45px 45px 0;
   transition: border-radius 0.5s;
@@ -56,16 +58,21 @@ body {
 .message {
   opacity: 0;
   color: white;
+  color: var(--color);
+  font-family: "Roboto", sans-serif;
   font-family: var(--font-family);
   transition: opacity 0.8s;
 }
 
 .message a {
+  color: #f6f9fc;
   color: var(--link-color);
+  font-size: 0.85rem;
   font-size: var(--link-font-size);
 }
 
 .message a:hover {
+  color: #0a2540;
   color: var(--link-hover);
 }
 
