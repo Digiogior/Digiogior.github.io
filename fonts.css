@@ -1,0 +1,27 @@
+/* W95FA Font Implementation */
+@font-face {
+    font-family: 'W95FA';
+    src: url('fonts/w95fa.woff') format('woff'),
+         url('fonts/W95FA.otf') format('opentype');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'W95FA';
+    src: url('fonts/w95fa.woff') format('woff'),
+         url('fonts/W95FA.otf') format('opentype');
+    font-weight: bold;
+    font-style: normal;
+    font-display: swap;
+}
+
+/* Utility classes */
+.w95-font {
+    font-family: 'W95FA', 'MS Sans Serif', 'Tahoma', 'Arial', sans-serif;
+}
+
+.w95-mono {
+    font-family: 'W95FA', 'Courier New', 'Monaco', 'Consolas', monospace;
+}

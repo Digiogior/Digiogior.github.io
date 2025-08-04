@@ -3,80 +3,182 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Jer Wei Liu's Portfolio</title>
+    <title>Portfolio Showcase</title>
+    <link rel="stylesheet" href="fonts.css">
     <link rel="stylesheet" href="styles.css">
-    <link rel="icon" href="image/favicon.png">
 </head>
 <body>
-    <main class="container">
-        <noscript>
-            <section>
-                <article class="bubble">
-                    <span class="message nojs-show">Hi</span>
-                </article>
-            </section>
-            <section>
-                <article class="bubble">
-                    <span class="message nojs-show">Nice to meet you &#128512;</span>
-                </article>
-            </section>
-            <section>
-                <article class="bubble">
-                    <span class="message nojs-show">I am Roger Liu</span>
-                </article>
-            </section>
-            <section>
-                <article class="bubble">
-                    <span class="message nojs-show">I am a web developer focus on front-end</span>
-                </article>
-            </section>
-            <section>
-                <article class="bubble">
-                    <span class="message nojs-show">Here are some of my works</span>
-                </article>
-            </section>
-            <section>
-                <article class="bubble">
-                    <span class="message nojs-show">Taiwan Inception Program Registration<br><a href="https://www.nvidia.com/zh-tw/deep-learning-ai/taiwan-inception-program/register/" target="_blank">Visit Website</a><br><img alt="Taiwan Inception Program Registration" src="image/inception-program-register-thumbnail.JPG"></span>
-                </article>
-            </section>
-            <section>
-                <article class="bubble">
-                    <span class="message nojs-show">Cooler Master Contest<br><a href="https://www.nvidia.com/content/apac/campaigns/coolermaster-contest/au/" target="_blank">Visit Website</a><br><img alt="Cooler Master Contest" src="image/cooler-master-campaign-thumbnail.JPG"></span>
-                </article>
-            </section>
-            <section>
-                <article class="bubble">
-                    <span class="message nojs-show">GeForce Cup<br><a href="https://www.nvidia.com/en-my/geforce/events/geforce-cup/grand-finals/" target="_blank">Visit Website</a><br><img alt="GeForce Cup" src="image/geforce-cup-pacific-final-thumbnail.jpg"></span>
-                </article>
-            </section>
-            <section>
-                <article class="bubble">
-                    <span class="message nojs-show">Game Face Campaign<br><a href="https://www.nvidia.com/content/apac/game-face-campaign/ANZ/" target="_blank">Visit Website</a><br><img alt="Game Face Campaign" src="image/gameface-campaign-thumbnail.JPG"></span>
-                </article>
-            </section>
-            <section>
-                <article class="bubble">
-                    <span class="message nojs-show">AI Conference Korea<br><a href="https://www.nvidia.com/ko-kr/ai-conference/" target="_blank">Visit Website</a><br><img alt="AI Conference Korea" src="image/ai-conference-kr-19-thumbnail.jpg"></span>
-                </article>
-            </section>
-            <section>
-                <article class="bubble">
-                    <span class="message nojs-show">I am open to new opportunities<br>You could contact me at <a href="mailto:digiogior@gmail.com">digiogior@gmail.com</a></span>
-                </article>
-            </section>
-            <section>
-                <article class="bubble">
-                    <span class="message nojs-show">Hope you have a GOOD day</span>
-                </article>
-            </section>
-            <section>
-                <article class="bubble">
-                    <span class="message nojs-show">&#129346;</span>
-                </article>
-            </section>
-        </noscript>
-    </main>
+    <div class="portfolio-container">
+        <!-- Main Title -->
+        <header class="main-header">
+            <h1 class="main-title">Roger Liu's Works</h1>
+        </header>
+
+        <!-- Slide Indicator at top -->
+        <div class="slide-indicator-top">
+            <span class="current-slide">1</span> / <span class="total-slides">5</span>
+        </div>
+
+        <!-- Portfolio Slides -->
+        <div class="slides-container" id="slidesContainer">
+            
+            <!-- Slide 1: NVIDIA GTC -->
+            <div class="slide active">
+                <div class="slide-content">
+                    <div class="portfolio-image">
+                        <img src="./images/gtc25-taipei-home-og_v1.jpg" alt="NVIDIA GTC Taipei">
+                    </div>
+                    <div class="portfolio-info">
+                        <h1 class="project-title">NVIDIA GTC Taipei</h1>
+                        <p class="project-description">
+                            Built and published multilingual event pages in Adobe Experience Manager to support NVIDIA’s annual global conference. Developed and deployed dynamic, JavaScript-powered promotional banners on NVIDIA.com via Adobe Target, driving international event awareness and engagement.
+                        </p>
+                        <div class="tech-stack">
+                            <h3>Technologies Used:</h3>
+                            <ul class="tech-list">
+                                <li>HTML</li>
+                                <li>CSS</li>
+                                <li>JavaScript</li>
+                                <li>Adobe Experience Manager</li>
+                                <li>Adobe Target</li>
+                                <li>Adobe Analytics</li>
+                            </ul>
+                        </div>
+                        <div class="project-link">
+                            <a href="https://www.nvidia.com/en-tw/gtc/" target="_blank" class="project-btn">View Project</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Slide 2: iCafe Certified Program  -->
+            <div class="slide">
+                <div class="slide-content">
+                    <div class="portfolio-image">
+                        <img src="./images/geforce-icafe-web-facebook-og-1200x630@2x.jpg" alt="iCafe Certified Program" loading="lazy">
+                    </div>
+                    <div class="portfolio-info">
+                        <h1 class="project-title">iCafe Certified Program</h1>
+                        <p class="project-description">
+                            Developed and launched the NVIDIA iCafe Certification Program application portal for APAC regions. Implemented an interactive iCafe Locator feature using Vue.js and Google Maps API, enabling users to easily find certified iCafes nearby.
+                        </p>
+                        <div class="tech-stack">
+                            <h3>Technologies Used:</h3>
+                            <ul class="tech-list">
+                                <li>HTML</li>
+                                <li>CSS</li>
+                                <li>Vue.js</li>
+                                <li>Adobe Experience Manager</li>
+                            </ul>
+                        </div>
+                        <div class="project-link">
+                            <a href="https://www.nvidia.com/en-ph/geforce/icafe-certified-program/" target="_blank" class="project-btn">View Project</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+                        <!-- Slide 3: NVIDIA Event Calendar -->
+                        <div class="slide">
+                            <div class="slide-content">
+                                <div class="portfolio-image">
+                                    <img src="./images/events-calendar.jpg" alt="NVIDIA Event Calendar" loading="lazy">
+                                </div>
+                                <div class="portfolio-info">
+                                    <h1 class="project-title">NVIDIA Event Calendar</h1>
+                                    <p class="project-description">
+                                        Developed an interactive Event Calendar for NVIDIA.com to showcase major event dates. Built filtering and search capabilities using React.js, enhancing user navigation and event discovery.
+                                    </p>
+                                    <div class="tech-stack">
+                                        <h3>Technologies Used:</h3>
+                                        <ul class="tech-list">
+                                            <li>HTML</li>
+                                            <li>CSS</li>
+                                            <li>React.js</li>
+                                            <li>Adobe Experience Manager</li>
+                                        </ul>
+                                    </div>
+                                    <div class="project-link">
+                                        <a href="https://www.nvidia.com/en-us/events/" target="_blank" class="project-btn">View Project</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+
+                        <!-- Slide 4: GeForce Cup Grand Finals -->
+            <div class="slide">
+                <div class="slide-content">
+                    <div class="portfolio-image">
+                        <img src="./images/geforce-cup-pacific-final-og-1200x630.jpg" alt="GeForce Cup Grand Finals" loading="lazy">
+                    </div>
+                    <div class="portfolio-info">
+                        <h1 class="project-title">GeForce Cup Grand Finals</h1>
+                        <p class="project-description">
+                            Created promotional landing pages for the GeForce Cup 2020 Grand Finals. Designed and implemented a custom CSS tournament bracket to visually display match progress and winners directly on the page.
+                        </p>
+                        <div class="tech-stack">
+                            <h3>Technologies Used:</h3>
+                            <ul class="tech-list">
+                                <li>HTML</li>
+                                <li>CSS</li>
+                                <li>JavaScript</li>
+                                <li>Adobe Experience Manager</li>
+                            </ul>
+                        </div>
+                        <div class="project-link">
+                            <a href="https://www.nvidia.com/en-my/geforce/events/geforce-cup/grand-finals/" target="_blank" class="project-btn">View Project</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+          
+
+
+
+            <!-- Slide 5: Game Face Campaign -->
+            <div class="slide">
+                <div class="slide-content">
+                    <div class="portfolio-image">
+                        <img src="./images/game-face.jpg" alt="Game Face Campaign" loading="lazy">
+                    </div>
+                    <div class="portfolio-info">
+                        <h1 class="project-title">Game Face Campaign</h1>
+                        <p class="project-description">
+                            Developed the Game Face campaign landing page for APAC markets, enabling users to apply custom image filters and share their creations on social media. Implemented filter functionality using JavaScript and Canvas, integrated with the Facebook API for seamless sharing. The page was built from scratch using Bootstrap CSS and HTML without a CMS.
+                        </p>
+                        <div class="tech-stack">
+                            <h3>Technologies Used:</h3>
+                            <ul class="tech-list">
+                                <li>HTML</li>
+                                <li>CSS</li>
+                                <li>JavaScript</li>
+                                <li>Facebook API</li>
+                                <li>Bootstrap</li>
+                                <li>Canvas API</li>
+                            </ul>
+                        </div>
+                        <div class="project-link">
+                            <a href="https://www.nvidia.com/content/apac/game-face-campaign/ANZ/" target="_blank" class="project-btn">View Project</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- Navigation at bottom -->
+        <nav class="portfolio-nav-bottom">
+            <button class="nav-btn prev-btn" id="prevBtn">‹</button>
+            <div class="keyboard-hint">
+                <span class="desktop-hint">Use ← → arrow keys or click navigation buttons to browse portfolio</span>
+                <span class="mobile-hint">Swipe left/right or use navigation buttons to browse portfolio</span>
+            </div>
+            <button class="nav-btn next-btn" id="nextBtn">›</button>
+        </nav>
+    </div>
+
     <script src="script.js"></script>
 </body>
 </html>

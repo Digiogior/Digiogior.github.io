@@ -1,115 +1,711 @@
-@import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
-
-:root {
-  --message-bg: #6772e5;
-  --color: #ffffff;
-  --link-color: #f6f9fc;
-  --link-hover: #0a2540;
-  --main-color: #c1c1c1;
-  --font-family: "Roboto", sans-serif;
-  --link-font-size: 0.85rem;
-  --background-color: #f6f9fc;
-}
-
-@media (min-width: 1200px) {
-  :root {
-    font-size: 1.8rem;
-  }
-}
-
-:root {
-  font-size: 1.4rem;
-}
-
-html {
-  box-sizing: border-box;
-}
-
-*,
-*::before,
-*::after {
-  box-sizing: inherit;
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
 body {
-  background-color: #f6f9fc;
-  background-color: var(--background-color);
+    font-family: 'W95FA', 'MS Sans Serif', 'Tahoma', 'Arial', sans-serif;
+    background: #C0C0C0;
+    background-image: 
+        repeating-linear-gradient(
+            90deg,
+            transparent,
+            transparent 1px,
+            rgba(255,255,255,0.3) 1px,
+            rgba(255,255,255,0.3) 2px
+        ),
+        repeating-linear-gradient(
+            0deg,
+            transparent,
+            transparent 1px,
+            rgba(0,0,0,0.1) 1px,
+            rgba(0,0,0,0.1) 2px
+        );
+    min-height: 100vh;
+    overflow-x: hidden;
+    cursor: default;
 }
 
-.container {
-  width: 95vw;
-  margin: 0.8rem auto;
+.portfolio-container {
+    width: 100%;
+    height: 100vh;
+    position: relative;
+    display: flex;
+    flex-direction: column;
 }
 
-.container * + * {
-  margin: 0.25rem 0;
+/* Main Header - Classic Mac Title Bar */
+.main-header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background: linear-gradient(to bottom, #F0F0F0 0%, #D0D0D0 50%, #B0B0B0 100%);
+    border-bottom: 2px solid #808080;
+    border-top: 1px solid #FFFFFF;
+    box-shadow: 
+        inset 1px 1px 0px #FFFFFF,
+        inset -1px -1px 0px #808080,
+        0px 2px 4px rgba(0,0,0,0.3);
+    z-index: 1000;
+    padding: 12px 0;
+    font-family: 'W95FA', 'MS Sans Serif', 'Tahoma', 'Arial', sans-serif;
 }
 
-.bubble {
-  display: inline-block;
-  padding: 0.5rem 0.95rem;
-  background: #6772e5;
-  background: var(--message-bg);
-  border-radius: 45px 45px 45px 0;
-  transition: border-radius 0.5s;
-  max-width: 100%;
+.main-title {
+    text-align: center;
+    font-size: 2.2rem;
+    font-weight: bold;
+    color: #000000;
+    text-shadow: 1px 1px 0px #FFFFFF;
+    margin: 0;
+    letter-spacing: 1px;
+    font-family: 'W95FA', 'MS Sans Serif', 'Tahoma', 'Arial', sans-serif;
 }
 
-.message {
-  opacity: 0;
-  color: white;
-  color: var(--color);
-  font-family: "Roboto", sans-serif;
-  font-family: var(--font-family);
-  transition: opacity 0.8s;
+/* Slide Indicator - Classic Mac Dialog */
+.slide-indicator-top {
+    position: fixed;
+    top: 70px;
+    left: 50%;
+    transform: translateX(-50%);
+    color: #000000;
+    font-weight: bold;
+    font-size: 14px;
+    background: linear-gradient(to bottom, #F0F0F0 0%, #E0E0E0 100%);
+    padding: 6px 12px;
+    border: 2px outset #C0C0C0;
+    box-shadow: 
+        inset 1px 1px 0px #FFFFFF,
+        inset -1px -1px 0px #808080;
+    z-index: 1000;
+    font-family: 'W95FA', 'MS Sans Serif', 'Tahoma', 'Arial', sans-serif;
+    text-shadow: 1px 1px 0px #FFFFFF;
 }
 
-.message a {
-  color: #f6f9fc;
-  color: var(--link-color);
-  font-size: 0.85rem;
-  font-size: var(--link-font-size);
+/* Navigation - Classic Mac Control Panel */
+.portfolio-nav-bottom {
+    position: fixed;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    background: linear-gradient(to bottom, #F0F0F0 0%, #D0D0D0 100%);
+    padding: 10px 15px;
+    border: 2px outset #C0C0C0;
+    box-shadow: 
+        inset 1px 1px 0px #FFFFFF,
+        inset -1px -1px 0px #808080,
+        2px 2px 4px rgba(0,0,0,0.3);
+    z-index: 1000;
 }
 
-.message a:hover {
-  color: #0a2540;
-  color: var(--link-hover);
+.nav-btn {
+    background: linear-gradient(to bottom, #F0F0F0 0%, #E0E0E0 50%, #D0D0D0 100%);
+    border: 2px outset #C0C0C0;
+    color: #000000;
+    font-size: 18px;
+    width: 36px;
+    height: 28px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    font-family: 'W95FA', 'MS Sans Serif', 'Tahoma', 'Arial', sans-serif;
+    box-shadow: 
+        inset 1px 1px 0px #FFFFFF,
+        inset -1px -1px 0px #808080;
+    transition: all 0.1s ease;
+    text-shadow: 1px 1px 0px #FFFFFF;
 }
 
-.message img {
-  max-width: 450px;
-  width: 100%;
-  height: auto;
-  padding: 0.45rem 0;
+.nav-btn:hover {
+    background: linear-gradient(to bottom, #FFFFFF 0%, #F0F0F0 50%, #E0E0E0 100%);
 }
 
-.loading strong:nth-of-type(1) {
-  color: #9880ff;
-  animation: loadingPoint 1s infinite alternate;
+.nav-btn:active {
+    border: 2px inset #C0C0C0;
+    box-shadow: 
+        inset -1px -1px 0px #FFFFFF,
+        inset 1px 1px 0px #808080;
+    transform: translate(1px, 1px);
 }
 
-.loading strong:nth-of-type(2) {
-  color: #ebe6ff;
-  animation: loadingPoint 1s infinite alternate;
-  animation-delay: 0.5s;
+.nav-btn:disabled {
+    opacity: 0.6;
+    cursor: default;
+    color: #808080;
 }
 
-.loading strong:nth-of-type(3) {
-  color: #ebe6ff;
-  animation: loadingPoint 1s infinite alternate;
-  animation-delay: 1s;
+/* Slides Container */
+.slides-container {
+    flex: 1;
+    position: relative;
+    overflow: hidden;
+    padding: 140px 20px 120px;
 }
 
-@keyframes loadingPoint {
-  0% {
-    color: #9880ff;
-  }
-  50%,
-  100% {
-    color: #ebe6ff;
-  }
+
+
+
+
+.slide {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    transform: translateX(100%);
+    transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
-.nojs-show {
-  opacity: 1;
+.slide.active {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+.slide.prev {
+    transform: translateX(-100%);
+}
+
+.slide-content {
+    background: linear-gradient(to bottom, #F0F0F0 0%, #E8E8E8 100%);
+    border: 2px outset #C0C0C0;
+    box-shadow: 
+        inset 1px 1px 0px #FFFFFF,
+        inset -1px -1px 0px #808080,
+        4px 4px 8px rgba(0,0,0,0.3);
+    padding: 45px 25px 25px 25px;
+    max-width: 1000px;
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+    align-items: center;
+    position: relative;
+}
+
+/* Classic Mac Window Title Bar */
+.slide-content::before {
+    content: var(--project-title, 'Project 1');
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 20px;
+    background: linear-gradient(to bottom, #F0F0F0 0%, #D0D0D0 100%);
+    border-bottom: 1px solid #808080;
+    border-top: 1px solid #FFFFFF;
+    z-index: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 11px;
+    font-weight: bold;
+    font-family: 'W95FA', 'MS Sans Serif', 'Tahoma', 'Arial', sans-serif;
+    color: #000000;
+    text-shadow: 1px 1px 0px #FFFFFF;
+}
+
+.portfolio-image {
+    position: relative;
+    overflow: hidden;
+    border: 2px inset #C0C0C0;
+    box-shadow: 
+        inset 1px 1px 0px #808080,
+        inset -1px -1px 0px #FFFFFF,
+        2px 2px 4px rgba(0,0,0,0.3);
+    background: #FFFFFF;
+    padding: 4px;
+    z-index: 0;
+}
+
+.portfolio-image img {
+    width: 100%;
+    aspect-ratio: 1200 / 630;
+    object-fit: contain;
+    border: 1px solid #808080;
+    transition: all 0.2s ease, opacity 0.3s ease;
+    display: block;
+    position: relative;
+    z-index: 0;
+    background: #FFFFFF;
+}
+
+/* Lazy loading states */
+.portfolio-image img[loading="lazy"] {
+    opacity: 0;
+}
+
+.portfolio-image img[loading="lazy"].loaded,
+.portfolio-image img:not([loading="lazy"]) {
+    opacity: 1;
+}
+
+/* Loading placeholder for lazy images */
+.portfolio-image img[loading="lazy"]:not(.loaded) {
+    background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%);
+    background-size: 200% 100%;
+    animation: loading-shimmer 1.5s infinite;
+}
+
+@keyframes loading-shimmer {
+    0% { background-position: -200% 0; }
+    100% { background-position: 200% 0; }
+}
+
+/* Fallback for browsers that don't support aspect-ratio */
+@supports not (aspect-ratio: 1200 / 630) {
+    .portfolio-image {
+        position: relative;
+        width: 100%;
+        padding-bottom: 52.5%; /* 630/1200 * 100% = 52.5% */
+        height: 0;
+    }
+    
+    .portfolio-image img {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+    }
+}
+
+.portfolio-image:hover {
+    border: 2px inset #A0A0A0;
+}
+
+.portfolio-image:hover img {
+    transform: none;
+}
+
+.portfolio-info {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.project-title {
+    font-size: 1.8rem;
+    font-weight: bold;
+    color: #000000;
+    margin-bottom: 0;
+    font-family: 'W95FA', 'MS Sans Serif', 'Tahoma', 'Arial', sans-serif;
+    text-shadow: 1px 1px 0px #FFFFFF;
+    letter-spacing: 0.5px;
+}
+
+.project-description {
+    font-size: 12px;
+    line-height: 1.4;
+    color: #000000;
+    text-align: left;
+    font-family: 'W95FA', 'MS Sans Serif', 'Tahoma', 'Arial', sans-serif;
+    background: #FFFFFF;
+    border: 1px inset #C0C0C0;
+    padding: 8px;
+    box-shadow: 
+        inset 1px 1px 0px #808080,
+        inset -1px -1px 0px #FFFFFF;
+}
+
+.tech-stack h3 {
+    font-size: 14px;
+    color: #000000;
+    margin-bottom: 8px;
+    font-weight: bold;
+    font-family: 'W95FA', 'MS Sans Serif', 'Tahoma', 'Arial', sans-serif;
+    text-shadow: 1px 1px 0px #FFFFFF;
+}
+
+.tech-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+    gap: 4px;
+    list-style: none;
+}
+
+.tech-list li {
+    background: linear-gradient(to bottom, #F0F0F0 0%, #E0E0E0 50%, #D0D0D0 100%);
+    color: #000000;
+    padding: 4px 8px;
+    border: 1px outset #C0C0C0;
+    font-size: 10px;
+    font-weight: normal;
+    text-align: center;
+    font-family: 'W95FA', 'MS Sans Serif', 'Tahoma', 'Arial', sans-serif;
+    box-shadow: 
+        inset 1px 1px 0px #FFFFFF,
+        inset -1px -1px 0px #808080;
+    transition: all 0.1s ease;
+    text-shadow: 1px 1px 0px #FFFFFF;
+    cursor: default;
+    /* Fixed dimensions and perfect centering */
+    min-height: 32px;
+    min-width: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-sizing: border-box;
+}
+
+.tech-list li:hover {
+    background: linear-gradient(to bottom, #FFFFFF 0%, #F0F0F0 50%, #E0E0E0 100%);
+}
+
+/* Project Link Button */
+.project-link {
+    margin-top: 15px;
+    text-align: left;
+}
+
+.project-btn {
+    display: inline-block;
+    background: linear-gradient(to bottom, #F0F0F0 0%, #E0E0E0 50%, #D0D0D0 100%);
+    color: #000000;
+    text-decoration: none;
+    padding: 8px 16px;
+    border: 2px outset #C0C0C0;
+    font-size: 14px;
+    font-weight: bold;
+    font-family: 'W95FA', 'MS Sans Serif', 'Tahoma', 'Arial', sans-serif;
+    box-shadow: 
+        inset 1px 1px 0px #FFFFFF,
+        inset -1px -1px 0px #808080;
+    transition: all 0.1s ease;
+    text-shadow: 1px 1px 0px #FFFFFF;
+    cursor: pointer;
+    min-width: 100px;
+}
+
+.project-btn:hover {
+    background: linear-gradient(to bottom, #E0E0E0 0%, #D0D0D0 50%, #C0C0C0 100%);
+    text-decoration: none;
+    color: #000000;
+    border: 2px inset #C0C0C0;
+    box-shadow: 
+        inset -1px -1px 0px #FFFFFF,
+        inset 1px 1px 0px #808080;
+    transform: translate(1px, 1px);
+}
+
+.project-btn:active {
+    border: 2px inset #C0C0C0;
+    box-shadow: 
+        inset -1px -1px 0px #FFFFFF,
+        inset 1px 1px 0px #808080;
+    transform: translate(1px, 1px);
+}
+
+.project-btn:focus {
+    outline: 2px dotted #000000;
+    outline-offset: 2px;
+}
+
+/* Keyboard hint - Classic Mac Text */
+.keyboard-hint {
+    color: #000000;
+    font-size: 11px;
+    font-weight: normal;
+    text-align: center;
+    min-width: 180px;
+    font-family: 'W95FA', 'MS Sans Serif', 'Tahoma', 'Arial', sans-serif;
+    text-shadow: 1px 1px 0px #FFFFFF;
+}
+
+/* Desktop hint - shown for screens 1024px and larger */
+.desktop-hint {
+    display: inline;
+}
+
+.mobile-hint {
+    display: none;
+}
+
+/* Mobile hint - shown for screens smaller than 1024px */
+@media (max-width: 1023px) {
+    .desktop-hint {
+        display: none;
+    }
+    
+    .mobile-hint {
+        display: inline;
+    }
+}
+
+/* Responsive Design - Retro Mac */
+@media (max-width: 768px) {
+    .main-title {
+        font-size: 1.8rem;
+        padding: 8px 0;
+    }
+    
+    .slide-indicator-top {
+        top: 60px;
+        font-size: 12px;
+        padding: 4px 8px;
+    }
+    
+    .slides-container {
+        padding: 110px 15px 100px;
+    }
+    
+    .slide-content {
+        grid-template-columns: 1fr;
+        gap: 15px;
+        padding: 35px 15px 15px 15px;
+        text-align: center;
+    }
+    
+    .project-title {
+        font-size: 1.4rem;
+    }
+    
+    .project-description {
+        font-size: 11px;
+        padding: 6px;
+    }
+    
+    .portfolio-image img {
+        aspect-ratio: 1200 / 630;
+    }
+    
+    .tech-list {
+        grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+        gap: 3px;
+    }
+    
+    .tech-list li {
+        padding: 3px 6px;
+        font-size: 9px;
+    }
+    
+    .portfolio-nav-bottom {
+        bottom: 15px;
+        padding: 6px 12px;
+        gap: 12px;
+    }
+    
+    .nav-btn {
+        width: 32px;
+        height: 24px;
+        font-size: 16px;
+    }
+    
+    .keyboard-hint {
+        font-size: 10px;
+        min-width: 160px;
+    }
+    
+    .mobile-hint,
+    .desktop-hint {
+        font-size: 10px;
+    }
+    
+    .project-btn {
+        font-size: 11px;
+        padding: 6px 12px;
+        min-width: 90px;
+    }
+}
+
+@media (max-width: 640px) {
+    .main-title {
+        font-size: 2rem;
+        padding: 10px 0;
+    }
+    
+    .project-title {
+        font-size: 1.5rem;
+        margin-top: 15px;
+        margin-bottom: 0;
+    }
+    
+    .project-description {
+        font-size: 14px;
+        padding: 8px;
+    }
+    
+    .tech-list li {
+        font-size: 10px;
+        padding: 4px 8px;
+    }
+    
+    .project-btn {
+        font-size: 14px;
+        padding: 12px 18px;
+        min-width: 120px;
+    }
+    
+    .project-link {
+        text-align: center;
+    }
+    
+    .keyboard-hint {
+        font-size: 11px;
+    }
+    
+    .slide-indicator-top {
+        font-size: 14px;
+        padding: 6px 10px;
+    }
+}
+
+@media (max-width: 480px) {
+    .main-title {
+        font-size: 1.5rem;
+        padding: 6px 0;
+    }
+    
+    .slide-indicator-top {
+        top: 55px;
+        font-size: 10px;
+        padding: 3px 6px;
+    }
+    
+    .slides-container {
+        padding: 100px 10px 90px;
+    }
+    
+    .slide-content {
+        padding: 30px 10px 10px 10px;
+        margin: 0 5px;
+        gap: 10px;
+    }
+    
+    .project-title {
+        font-size: 1.5rem;
+        margin-top: 15px;
+        margin-bottom: 0;
+    }
+    
+    .project-description {
+        font-size: 14px;
+        padding: 4px;
+    }
+    
+    .portfolio-image img {
+        aspect-ratio: 1200 / 630;
+    }
+    
+    .tech-stack h3 {
+        font-size: 12px;
+        margin-bottom: 6px;
+    }
+    
+    .tech-list {
+        grid-template-columns: repeat(auto-fit, minmax(80px, 1fr));
+        gap: 2px;
+    }
+    
+    .tech-list li {
+        padding: 2px 4px;
+        font-size: 10px;
+    }
+    
+    .portfolio-nav-bottom {
+        bottom: 10px;
+        padding: 4px 8px;
+        gap: 8px;
+    }
+    
+    .nav-btn {
+        width: 28px;
+        height: 20px;
+        font-size: 14px;
+    }
+    
+    .keyboard-hint {
+        font-size: 9px;
+        min-width: 130px;
+    }
+    
+    .mobile-hint,
+    .desktop-hint {
+        font-size: 9px;
+    }
+    
+    .project-btn {
+        font-size: 14px;
+        padding: 12px 18px;
+        min-width: 120px;
+    }
+    
+    .project-link {
+        text-align: center;
+    }
+}
+
+/* Enhanced typography for larger screens */
+@media (min-width: 641px) {
+    .project-description {
+        font-size: 16px;
+    }
+    
+    .tech-list li {
+        font-size: 12px;
+    }
+}
+
+/* Animation for smooth entry */
+.slide-content {
+    animation: slideIn 0.6s ease-out;
+}
+
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Classic Mac Focus styles */
+.nav-btn:focus {
+    outline: 2px dotted #000000;
+    outline-offset: 1px;
+}
+
+/* Classic Mac Print styles */
+@media print {
+    body {
+        background: #FFFFFF;
+        background-image: none;
+    }
+    
+    .portfolio-nav-bottom,
+    .keyboard-hint,
+    .slide-indicator-top {
+        display: none;
+    }
+    
+    .slide {
+        position: static;
+        opacity: 1;
+        transform: none;
+        page-break-after: always;
+    }
+    
+    .slide-content {
+        box-shadow: none;
+        border: 2px solid #000000;
+        background: #FFFFFF;
+    }
+    
+    .slide-content::before {
+        background: #E0E0E0;
+        border-bottom: 1px solid #000000;
+    }
 }
